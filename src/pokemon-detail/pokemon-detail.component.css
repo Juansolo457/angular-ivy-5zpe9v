@@ -1,0 +1,49 @@
+.detail-container {
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  background-color: lightgray;
+}
+
+.card-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  max-width: 600px;
+  max-height: 700px;
+  margin: auto;
+  place-content: center;
+}
+
+.image-container {
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+}
+
+img {
+  width: 60%;
+  height: 100%;
+}
+
+.info-container {
+  grid-row: 2;
+  display: grid;
+  place-items: center;
+  row-gap: 20px;
+  grid-template-rows: min-content min-content;
+}
+
+.description-container {
+  width: 90%;
+  font-size: 14px;
+  margin-bottom: 10%;
+}
+
+.name-container {
+  font-size: 22px;
+}
+
+button {
+  max-width: 150px;
+  justify-self: center;
+}

@@ -1,0 +1,14 @@
+<div class="list-container">
+  <div class="card-container" *ngFor="let item of pokemons$ | async">
+    <div class="img-container">
+      <a [routerLink]="['/pokemons/', item.name]"
+        ><img [src]="item.imageUrl"
+      /></a>
+    </div>
+    <div class="name-container">
+      #{{ item.id }} - {{ item.name | titlecase }}
+    </div>
+
+    <div class="type-container">{{ item.type | titlecase }} Pokemon</div>
+  </div>
+</div>

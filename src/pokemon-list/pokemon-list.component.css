@@ -1,0 +1,21 @@
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-template-rows: 1fr;
+  margin-top: 100px;
+  margin: auto;
+}
+
+.card-container {
+  background-color: aqua;
+  border: 1px dashed black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  place-items: center;
+}
+
+.img-container {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}

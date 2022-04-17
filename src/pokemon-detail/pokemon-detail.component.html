@@ -1,0 +1,21 @@
+<div class="detail-container">
+  <div class="card-container background-{{ pokemonData?.type }}">
+    <div class="image-container">
+      <img [src]="pokemonData?.imageUrl" />
+    </div>
+
+    <div class="info-container">
+      <div class="name-container">
+        #{{ pokemonData?.id }} - {{ pokemonData?.name | titlecase }}
+      </div>
+
+      <div class="description-container">
+        {{ speciesInfo?.description }}
+        Found in {{ speciesInfo?.habitat }}.
+      </div>
+    </div>
+  </div>
+
+  <button class="background-{{ pokemonData?.type }}" routerLink="../">Back to List</button>
+
+</div>
