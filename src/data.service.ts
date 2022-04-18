@@ -16,6 +16,8 @@ import {
 })
 export class DataService {
   private baseUrl = 'https://pokeapi.co/api/v2/pokemon';
+  public status: string = '';
+  public errorMessage: string = ''
 
   constructor(private http: HttpClient) {}
 
@@ -86,9 +88,19 @@ export class DataService {
       })
     );
   }
-  private deletePokemon(id: string) {
-
+  public deletePokemon(id: string) {
+      this.http.delete<string>(this.baseUrl + `${id}`)
+      .subscribe({
+        next: data => {this.status = 'Del successful'},
+        error: error => {
+            this.errorMessage = error.message;
+            console.error('There was an error!', error);
+          
+        },
+         complete: () => console.log('Observer got a complete notification')
+      })
   }
+
 
 
   getPokemonSpeciesInfoById(id: string) {
